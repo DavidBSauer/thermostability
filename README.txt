@@ -1,5 +1,9 @@
+# Thermostability
+Script of two bioinformatic methods to identify a limited set of amino acids or positions that likely underlie thermostability from growth temperature data and protein multiple sequence alignments. 
 
-—Requirements-
+See: Sauer, Karpowich, Song & Wang. Rapid Bioinformatic Identification of Thermostabilizing Mutations. Biophysical Journal (2015) https://doi.org/10.1016/j.bpj.2015.07.026
+
+## Requirements
 The script requires Biopython, NumPy, MatPlotLib, and matplotlib-venn be installed. 
 
 http://biopython.org/wiki/Download
@@ -7,7 +11,7 @@ http://www.scipy.org/scipylib/download.html
 http://matplotlib.org/downloads.html
 https://pypi.python.org/pypi/matplotlib-venn
 
--Running the script-
+## Running the script
 Start the script by running in the terminal. After starting, the script will ask the analysis type, if appropriate, and appropriate parameters. The script will then run automatically, with ETAs printed for long steps.
 
 The input type can be either species assignment only (SAO), aligned (ALN), or species and temps assigned (STA).
@@ -29,7 +33,7 @@ The input type can be either species assignment only (SAO), aligned (ALN), or sp
 		X is a identity matrix (Clustal format)
 		Y is the run name, used for creating sub-directories 
 
--Result files and figures-
+## Result files and figures
 There will be one folder created using the given run name. Inside of that will be basic data organization files and, if appropriate, two subdirectories for the “global” and “pairwise” methods. 
 
 In the “Y” folder will be (where Y is the run name):
@@ -78,7 +82,7 @@ In the “Y/global/figures” folder will be (where Y is the run name):
 
 In the “Y/global/figures/histograms” folder will be (where Y is the run name)a series of files named “pos_x_histogram.png” (where X is the column of the MSA) of the hyperthermophile and thermophile combined (red) and mesophile amino acid frequencies.
 
--General Notes-
+## General Notes
 The analysis is absolutely dependent on alignment quality. Make sure the seuqences are well aligned before the analysis. Pathologies are easy to note if systematic difference are seen in the global heatmaps. 
 The calculation time scales with alignment length, removing poorly aligned portions will significantly shorten the calculation time. 
 The pairwise calculation takes significantly longer than the global analysis, but is calculated first when run together. If earlier results are desired, run the global analysis seperately. 
